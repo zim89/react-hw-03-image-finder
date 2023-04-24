@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './ImageGalleryItem.scss';
 
 export default class ImageGalleryItem extends Component {
-  static propTypes = {};
+  // static propTypes = {};
 
   render() {
     const { images, toggleModal } = this.props;

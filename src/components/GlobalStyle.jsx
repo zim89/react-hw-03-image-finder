@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     background-color: #fff;
-    color: #010101;
+    /* color: #010101; */
     line-height: 1.5;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;

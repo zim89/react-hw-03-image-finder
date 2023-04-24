@@ -6,7 +6,6 @@ import ImageGallery from './ImageGallery/ImageGallery';
 import Modal from './Modal/Modal';
 import API from 'services/fetchImages';
 import Button from './Button/Button';
-import Loader from './Loader/Loader';
 
 Notify.init({
   clickToClose: true,

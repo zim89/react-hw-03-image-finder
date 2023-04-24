@@ -27,7 +27,7 @@ export default class App extends Component {
     const prevSearch = prevState.searchQuery;
     const nextSearch = this.props.searchQuery;
 
-    const { searchQuery, searchPage } = this.state;
+    const { searchQuery } = this.state;
     if (prevSearch !== nextSearch) {
       try {
         const data = await API.fetchImages(searchQuery);

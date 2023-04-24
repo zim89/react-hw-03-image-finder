@@ -11,6 +11,7 @@ export default class App extends Component {
     searchPage: 1,
     showModal: false,
   };
+  Query;
 
   async componentDidMount() {
     const { searchQuery } = this.state;
@@ -23,7 +24,7 @@ export default class App extends Component {
     }
   }
 
-  async componentDidUpdate(prevState) {
+  async componentDidUpdate(prevProps, prevState) {
     const prevSearch = prevState.searchQuery;
     const nextSearch = this.props.searchQuery;
 
@@ -35,14 +36,6 @@ export default class App extends Component {
       } catch (error) {
         console.log(error);
       }
-    }
-  }
-
-  async fetchImages(query, page) {
-    try {
-      return await API.fetchImages(query, page);
-    } catch (error) {
-      console.log(error);
     }
   }
 

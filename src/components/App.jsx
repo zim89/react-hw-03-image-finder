@@ -11,10 +11,9 @@ export default class App extends Component {
     searchPage: 1,
     showModal: false,
   };
-  Query;
 
   async componentDidMount() {
-    const { searchQuery, searchPage } = this.state;
+    const { searchQuery } = this.state;
 
     try {
       const data = await API.fetchImages(searchQuery);
@@ -24,7 +23,7 @@ export default class App extends Component {
     }
   }
 
-  async componentDidUpdate(prevProps, prevState) {
+  async componentDidUpdate(prevState) {
     const prevSearch = prevState.searchQuery;
     const nextSearch = this.props.searchQuery;
 
@@ -51,7 +50,7 @@ export default class App extends Component {
     this.setState({ searchQuery });
   };
 
-  toggleModal = largeImageURL => {
+  toggleModal = () => {
     this.setState(({ showModal }) => ({
       showModal: !showModal,
     }));

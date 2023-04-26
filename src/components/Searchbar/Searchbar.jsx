@@ -1,11 +1,14 @@
 // import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { FaSearch } from 'react-icons/fa';
-import './Searchbar.scss';
 import { Notify } from 'notiflix';
+import './Searchbar.scss';
 
 export default class Searchbar extends Component {
-  static propTypes = {};
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  };
 
   state = {
     search: '',

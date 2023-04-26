@@ -2,31 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ImageGalleryItem.scss';
 
-function ImageGalleryItem({ ...otherProps }) {
-  const { images, onOpenModal } = otherProps;
-  return images.map(({ id, webformatURL, largeImageURL, tags }) => {
-    return (
-      <li key={id} className="gallery__item">
-        <img
-          className="gallery__image"
-          src={webformatURL}
-          alt={tags}
-          onClick={() => onOpenModal(largeImageURL, tags)}
-        />
-      </li>
-    );
-  });
+function ImageGalleryItem({ onOpenModal, ...otherProps }) {
+  const { webformatURL, largeImageURL, tags } = otherProps;
+  return (
+    <img
+      className="gallery__image"
+      src={webformatURL}
+      alt={tags}
+      onClick={() => onOpenModal(largeImageURL, tags)}
+    />
+  );
 }
 
 ImageGalleryItem.propTypes = {
-  images: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      webformatURL: PropTypes.string.isRequired,
-      tags: PropTypes.string.isRequired,
-      largeImageURL: PropTypes.string.isRequired,
-    }).isRequired
-  ).isRequired,
+  webformatURL: PropTypes.string.isRequired,
+  tags: PropTypes.string.isRequired,
+  largeImageURL: PropTypes.string.isRequired,
   onOpenModal: PropTypes.func.isRequired,
 };
 

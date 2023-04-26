@@ -3,10 +3,16 @@ import PropTypes from 'prop-types';
 import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 import './ImageGallery.scss';
 
-function ImageGallery({ ...otherProps }) {
+function ImageGallery({ images, onOpenModal }) {
   return (
     <ul className="gallery">
-      <ImageGalleryItem {...otherProps} />
+      {images.map(({ id, ...otherProps }) => {
+        return (
+          <li key={id} className="gallery__item">
+            <ImageGalleryItem onOpenModal={onOpenModal} {...otherProps} />
+          </li>
+        );
+      })}
     </ul>
   );
 }
